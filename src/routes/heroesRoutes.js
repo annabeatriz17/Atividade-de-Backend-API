@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const heroesController = require("../controllers/heroesController");
 const upload = require("../config/upload");
-const apiKeyMiddleware = require ("../config/apiKey");
 
-router.use(apiKeyMiddleware);
 
 router.get("/heroes", heroesController.getAllHeroes);
 router.get("/heroes/:id", heroesController.getHeroesById);
