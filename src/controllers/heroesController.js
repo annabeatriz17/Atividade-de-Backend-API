@@ -2,8 +2,8 @@ const heroesModel = require("../models/heroesModel");
 
 const getAllHeroes = async (req, res) => {
     try {
-        const { name } = req.query;
-        const heroes = await heroesModel.getAllHeroes(name);
+        const { name_characters } = req.query;
+        const heroes = await heroesModel.getAllHeroes(name_characters);
         res.json(heroes);
     } catch (error) {
         res.status(500).json({error: "Erro ao buscar heroes!"});
@@ -24,9 +24,9 @@ const getHeroesById = async (req, res) => {
 
 const createHero = async (req, res) => {
     try {
-        const { name, publishers_id } = req.body;
+        const { name_characters, publishers_id } = req.body;
         const photo = req.file ? req.file.filename : null;
-        const newHero = await heroesModel.createHero(name, publishers_id, photo);
+        const newHero = await heroesModel.createHero(name_characters, publishers_id, photo);
         res.status(201).json(newHero);
     } catch (error) {
         res.status(500).json({error: "Erro ao criar heroi!"});
@@ -35,8 +35,8 @@ const createHero = async (req, res) => {
 
 const updateHero = async (req, res) => {
     try {
-        const { name, publishers_id } = req.body;
-        const updateHero = await heroesModel.updateHero(req.params.id, name, publishers_id);
+        const { name_characters, publishers_id } = req.body;
+        const updateHero = await heroesModel.updateHero(req.params.id, name_characters, publishers_id);
         if (!updateHero) {
             res.status(404).json({message: "Heroi não encontrado!"});
         }

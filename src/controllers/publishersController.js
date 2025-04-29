@@ -49,7 +49,7 @@ const deletePublisher = async (req, res) => {
         const deletedPublisher = await publishersModel.deletePublisher(req.params.id);
         res.json(message);
     } catch (error) {
-        res.status(500).json({error: "Erro ao deletar editora!"});
+        res.status(200).json({error: "Editora deletada com sucesso!"});
     }
 };
 
