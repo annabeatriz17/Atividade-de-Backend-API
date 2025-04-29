@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const heroesController = require("../controllers/heroesController");
+const upload = require("../config/upload");
+
 
 router.get("/heroes", heroesController.getAllHeroes);
 router.get("/heroes/:id", heroesController.getHeroesById);
