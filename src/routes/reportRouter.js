@@ -5,7 +5,6 @@ const apiKeyMiddleware = require("../config/apiKey")
 
 router.use(apiKeyMiddleware);
 
-
 //Rota para exportar PDF
 router.get("/report/pdf", reportController.exportHeroesPDF);
 

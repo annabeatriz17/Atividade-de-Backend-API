@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const publishersController = require("../controllers/publishersController");
+const apiKeyMiddleware = require ("../config/apiKey");
 
+router.use(apiKeyMiddleware);
 
 
 router.get("/publishers", publishersController.getAllPublishers);
