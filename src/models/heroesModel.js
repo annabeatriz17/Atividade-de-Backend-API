@@ -19,7 +19,7 @@ const getAllHeroes = async (name) => {
     }
 };
 
-const getPublishersById = async (id) => {
+const getHeroesById = async (id) => {
     const result = await pool.query(
         `SELECT heroes.*, publishers.name AS publishers_name
         FROM heroes
@@ -55,4 +55,4 @@ const deleteHero = async (id) => {
     return {message: "Heroi deletado com sucesso!"};
 };
 
-module.exports = { getAllHeroes, getPublishersById, createHero, updateHero, deleteHero };
+module.exports = { getAllHeroes, getHeroesById, createHero, updateHero, deleteHero };

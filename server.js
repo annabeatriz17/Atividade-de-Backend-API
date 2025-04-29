@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use("/publishers", publishersRoutes);
-app.use("/heroes", heroesRoutes);
+app.use("/api", publishersRoutes);
+app.use("/api", heroesRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const PORT = process.env.PORT || 3000;
