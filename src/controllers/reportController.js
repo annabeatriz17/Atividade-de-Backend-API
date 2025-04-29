@@ -1,5 +1,7 @@
 const PDFDocument = require("pdfkit");
 
+const heroesModel = require("../models/heroesModel");
+
 const exportHeroesPDF = async (req, res) => {
     try {
         const heroes = await heroesModel.getAllHeroes();

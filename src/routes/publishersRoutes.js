@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const publishersController = require("../controllers/publishersController");
 
-
 router.get("/publishers", publishersController.getAllPublishers);
 router.get("/publishers/:id", publishersController.getPublishersById);
 router.post("/publishers", publishersController.createPublisher);
